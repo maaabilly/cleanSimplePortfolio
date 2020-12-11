@@ -1,3 +1,11 @@
+:root {
+  --main-bg-color: #fff;
+  --secondary-bg-color: rgb(245, 245, 245);
+  --main-text: #000;
+  --secondary-text: #ff5722;
+  --accent-color: #90a4ae;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +13,20 @@
 }
 
 body {
-  font-family: "Century Gothic", 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  letter-spacing: 1px;
+  margin: 20px;
+}
+
+.et-hero-tabs {
+  background-color: var(--main-bg-color);
 }
 
 .et-hero-tabs h1, .et-hero-tabs h3 {
@@ -49,6 +66,7 @@ a {
   font-size: 1rem;
   letter-spacing: 0.3rem;
   opacity: 0.6;
+  margin-top: 10px;
 }
 
 .et-hero-tabs-container {
@@ -59,6 +77,8 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -96,7 +116,7 @@ a {
 
 .et-hero-tab:hover {
   color: white;
-  background-color: rgba(102, 177, 241, 0.8);
+  background-color: var(--accent-color);
   -webkit-transition: all o 0.5s ease;
   transition: all o 0.5s ease;
 }
@@ -106,9 +126,62 @@ a {
   bottom: 0;
   width: 0;
   height: 6px;
-  background: #66b1f1;
+  background: var(--accent-color);
   -webkit-transition: left 0.3s ease;
   transition: left 0.3s ease;
+}
+
+#tab-about {
+  background-color: var(--secondary-bg-color);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+#tab-about img {
+  max-width: 450px;
+  border-radius: 100px;
+}
+
+.about-details {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+
+.about-details .section-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-details .section-header h3:first-child {
+  font-size: 2rem;
+  opacity: 1;
+  color: var(--secondary-text);
+}
+
+.about-details .section-details {
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#tab-projects {
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#tab-contact {
+  background-color: var(--secondary-bg-color);
 }
 
 .footer {

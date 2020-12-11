@@ -1,17 +1,31 @@
+:root {
+    --main-bg-color: #fff;
+    --secondary-bg-color: rgb(245, 245, 245);
+    --main-text: #000;
+    --secondary-text: #ff5722;
+    --accent-color: #90a4ae;
+  }
+
 *{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 body {
-    font-family: "Century Gothic", 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 a {
     text-decoration: none;
 }
+p {
+    letter-spacing: 1px;
+
+    margin: 20px;
+}
 
 .et-hero-tabs { 
+    background-color: var(--main-bg-color);
     h1, h3 {
         text-transform: uppercase;
     }
@@ -36,12 +50,15 @@ a {
             font-size: 1rem;
             letter-spacing: 0.3rem;
             opacity: 0.6;
+            margin-top: 10px;
         }
 }
 
 .et-hero-tabs-container {
     display: flex;
     flex-direction: row;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 
     position: absolute;
     bottom: 0;              // no area at bottom of container
@@ -67,7 +84,7 @@ a {
     font-size: 0.8rem;
     &:hover {
         color: white;
-        background-color: rgba(102, 177,241, 0.8);
+        background-color: var(--accent-color);
         transition: all o.5s ease;
     }
 }
@@ -77,8 +94,47 @@ a {
     bottom: 0;
     width: 0;
     height: 6px;
-    background: #66b1f1;
+    background: var(--accent-color);
     transition: left 0.3s ease;
+}
+
+#tab-about {
+    background-color: var(--secondary-bg-color);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    img {
+        max-width: 450px;
+        // height: auto;
+        border-radius: 100px;
+    }
+}
+.about-details {
+    height: 100%;
+    display: grid;
+    // grid-template-rows: 1.75fr 2fr;
+    .section-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h3:first-child{
+            font-size: 2rem;
+            opacity: 1;
+            color: var(--secondary-text);
+        }
+    }
+    .section-details {
+        align-content: center;
+    }
+}
+
+#tab-projects {
+    background-color: var(--main-bg-color);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+#tab-contact {
+    background-color: var(--secondary-bg-color);
 }
 
 
